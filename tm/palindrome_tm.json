@@ -1,0 +1,46 @@
+{
+    "states": [
+        "q0", "q1", "q2", "q3", "q4", "q5", "q_accept", "q_reject"
+    ],
+    "alphabet": [
+        "a", "b"
+    ],
+    "stack_alphabet": [
+        "_"
+    ],
+    "initial_state": [
+        "q0"
+    ],
+    "initial_stack_symbol": "_",
+    "final_states": [
+        "q_accept"
+    ],
+    "transitions": [
+        {"start": "q0", "input": "_", "pop": "_", "top": "q_accept", "push": "_", "direction": "S"},
+        {"start": "q0", "input": "a", "pop": "_", "top": "q1", "push": "X", "direction": "R"},
+        {"start": "q0", "input": "b", "pop": "_", "top": "q1", "push": "Y", "direction": "R"},
+        
+        {"start": "q1", "input": "a", "pop": "_", "top": "q1", "push": "a", "direction": "R"},
+        {"start": "q1", "input": "b", "pop": "_", "top": "q1", "push": "b", "direction": "R"},
+        {"start": "q1", "input": "_", "pop": "_", "top": "q2", "push": "_", "direction": "L"},
+        
+        {"start": "q2", "input": "a", "pop": "_", "top": "q3", "push": "_", "direction": "L"},
+        {"start": "q2", "input": "b", "pop": "_", "top": "q4", "push": "_", "direction": "L"},
+        {"start": "q2", "input": "X", "pop": "_", "top": "q5", "push": "X", "direction": "R"},
+        {"start": "q2", "input": "Y", "pop": "_", "top": "q5", "push": "Y", "direction": "R"},
+        
+        {"start": "q3", "input": "a", "pop": "_", "top": "q3", "push": "a", "direction": "L"},
+        {"start": "q3", "input": "b", "pop": "_", "top": "q3", "push": "b", "direction": "L"},
+        {"start": "q3", "input": "X", "pop": "_", "top": "q0", "push": "X", "direction": "R"},
+        {"start": "q3", "input": "Y", "pop": "_", "top": "q_reject", "push": "Y", "direction": "S"},
+        
+        {"start": "q4", "input": "a", "pop": "_", "top": "q4", "push": "a", "direction": "L"},
+        {"start": "q4", "input": "b", "pop": "_", "top": "q4", "push": "b", "direction": "L"},
+        {"start": "q4", "input": "Y", "pop": "_", "top": "q0", "push": "Y", "direction": "R"},
+        {"start": "q4", "input": "X", "pop": "_", "top": "q_reject", "push": "X", "direction": "S"},
+        
+        {"start": "q5", "input": "_", "pop": "_", "top": "q_accept", "push": "_", "direction": "S"},
+        {"start": "q5", "input": "a", "pop": "_", "top": "q_reject", "push": "a", "direction": "S"},
+        {"start": "q5", "input": "b", "pop": "_", "top": "q_reject", "push": "b", "direction": "S"}
+    ]
+}
