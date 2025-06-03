@@ -38,15 +38,16 @@ This repository gathers the coursework for the **LFA** module (*Formal  Langua
 
 ### DFA sample
 
+
 Binary strings with an **odd** number of `1`s:
 
 ```mermaid
 stateDiagram-v2
     [*] --- q0 : start
-    q0 -(1)- q1 
-    q0 -(0)- q0 
-    q1 -(1)- q0 
-    q1 -(0)- q1 
+    q0 -(1)- q1
+    q0 -(0)- q0
+    q1 -(1)- q0
+    q1 -(0)- q1
     q1 --- [*] : accept
 ```
 
