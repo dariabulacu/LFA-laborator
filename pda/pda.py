@@ -22,7 +22,7 @@ def load_data_json(file_name):
 
     return states, alphabet, initial_state, stack_start, final_states, transitions
 
-def apply_epsilon_closure(state, stack, transitions):
+def apply_epsilon(state, stack, transitions):
     changed = True
     while changed:
         changed = False
@@ -52,7 +52,7 @@ def pda_emulate(input_str, start_state, stack_start, final_states, transitions, 
     stack = [stack_start]
 
     if input_str == "":
-        state, stack = apply_epsilon_closure(state, stack, transitions)
+        state, stack = apply_epsilon(state, stack, transitions)
 
     for ch in input_str:
         if ch not in alphabet:
@@ -76,9 +76,9 @@ def pda_emulate(input_str, start_state, stack_start, final_states, transitions, 
         if not moved:
             return False
 
-        state, stack = apply_epsilon_closure(state, stack, transitions)
+        state, stack = apply_epsilon(state, stack, transitions)
 
-    state, stack = apply_epsilon_closure(state, stack, transitions)
+    state, stack = apply_epsilon(state, stack, transitions)
     return state in final_states
 
 
