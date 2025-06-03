@@ -1,0 +1,2 @@
+# LFA-laborator
+Laboratoare LFA 
