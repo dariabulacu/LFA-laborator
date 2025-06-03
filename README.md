@@ -50,19 +50,4 @@ stateDiagram-v2
     q1 --- [*] : accept
 ```
 
-### NFA sample
-
-A tiny NFA (illustrating nondeterminism via an ε‑move):
-
-```mermaid
-stateDiagram-v2
-    [*] --> q0
-    q0 --> q0 : 0
-    q0 --> q1 : 1
-    q1 --> q2 : ε
-    q2 --> [*] : accept
-```
-
----
-
 
