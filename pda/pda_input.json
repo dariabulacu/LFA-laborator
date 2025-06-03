@@ -1,0 +1,26 @@
+{
+    "states": [
+        "q0", "q1", "q2"
+    ],
+    "alphabet": [
+        "a", "b"
+    ],
+    "stack_alphabet": [
+        "$", "A"
+    ],
+    "initial_state": [
+        "q0"
+    ],
+    "initial_stack_symbol": "$",
+    "final_states": [
+        "q2"
+    ],
+    "transitions": [
+        {"start": "q0", "input": "epsilon", "pop": "$", "top": "q2", "push": "$"},
+        {"start": "q0", "input": "a", "pop": "$", "top": "q1", "push": "A$"},
+        {"start": "q0", "input": "a", "pop": "A", "top": "q1", "push": "AA"},
+        {"start": "q1", "input": "a", "pop": "A", "top": "q1", "push": "AA"},
+        {"start": "q1", "input": "b", "pop": "A", "top": "q1", "push": "epsilon"},
+        {"start": "q1", "input": "epsilon", "pop": "$", "top": "q2", "push": "$"}
+    ]
+}
